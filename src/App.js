@@ -31,7 +31,7 @@ function App() {
     return `${day} ${date} ${month}, ${year}`
   }
 
-  let appClass = () => {
+  const appClass = () => {
     let className = 'app'
     if (typeof weather.main === 'undefined') {
       className = 'app'
@@ -52,9 +52,8 @@ function App() {
     return className
   }
 
-
   return (
-    <div className={appClass()} id='app'>
+    <div className={appClass()}>
       <main>
         <div className='search-box'>
           <input type='text' className='search-bar' placeholder='Search...' onChange={e => setQuery(e.target.value)} value={query} onKeyPress={search}/>
