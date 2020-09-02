@@ -31,34 +31,29 @@ function App() {
     return `${day} ${date} ${month}, ${year}`
   }
 
-  // const appClass = () => {
-  //   let className = 'app'
-  //   if (typeof weather.main === 'undefined') {
-  //     className = 'app'
-  //   } else {
-  //     if (weather.main.temp < 10) {
-  //       className = 'app cold'
-  //     } else if(weather.main.temp < 30) {
-  //       className = 'app spring'
-  //     } else {
-  //       className = 'app hot'
-  //     }
-  //     if (weather.weather[0].main === 'Thunderstorm') {
-  //       className = 'app lightning'
-  //     } else if (weather.weather[0].main === 'Clouds') {
-  //       className = 'app cloudy'
-  //     }
-  //   }
-  //   return className
-  // }
+  const appClass = () => {
+    let className = 'app'
+    if (typeof weather.main === 'undefined') {
+      className = 'app'
+    } else {
+      if (weather.main.temp < 10) {
+        className = 'app cold'
+      } else if(weather.main.temp < 30) {
+        className = 'app spring'
+      } else {
+        className = 'app hot'
+      }
+      if (weather.weather[0].main === 'Thunderstorm') {
+        className = 'app lightning'
+      } else if (weather.weather[0].main === 'Clouds') {
+        className = 'app cloudy'
+      }
+    }
+    return className
+  }
 
   return (
-    <div className={(typeof weather.main != 'undefined') ? (
-      (weather.main.temp > 16) ? 'app hot' : 'app'
-    ) : 'app'}>
-      <p>{(typeof weather.main != 'undefined') ? (
-      (weather.main.temp > 16) ? 'app hot' : 'app'
-    ) : 'app'}</p>
+    <div className={appClass()}>
       <main>
         <div className='search-box'>
           <input type='text' className='search-bar' placeholder='Search...' onChange={e => setQuery(e.target.value)} value={query} onKeyPress={search}/>
