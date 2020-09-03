@@ -16,23 +16,23 @@
   -webkit-transition: all 2s ease-in-out;
 }
 
-.app.cold {
+.appcold {
   background-image: url('assests/cold-weather.jpg');
 }
 
-.app.hot {
+.apphot {
   background-image: url('assests/hot-weather.jpg');
 }
 
-.app.cloudy {
+.appcloudy {
   background-image: url('assests/cloudy-weather.jpg');
 }
 
-.app.lightning {
+.applightning {
   background-image: url('assests/lightning-weather.jpg');
 }
 
-.app.spring {
+.appspring {
   background-image: url('assests/spring-weather.jpg');
 }
 
