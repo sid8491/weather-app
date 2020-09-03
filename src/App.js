@@ -32,21 +32,21 @@ function App() {
   }
 
   const appClass = () => {
-    let className = 'app'
+    let className = 'appspring'
     if (typeof weather.main === 'undefined') {
-      className = 'app'
+      className = 'appspring'
     } else {
       if (weather.main.temp < 10) {
-        className = 'app cold'
+        className = 'appcold'
       } else if(weather.main.temp < 30) {
-        className = 'app spring'
+        className = 'appspring'
       } else {
-        className = 'app hot'
+        className = 'apphot'
       }
       if (weather.weather[0].main === 'Thunderstorm') {
-        className = 'app lightning'
+        className = 'applightning'
       } else if (weather.weather[0].main === 'Clouds') {
-        className = 'app cloudy'
+        className = 'appcloudy'
       }
     }
     return className
